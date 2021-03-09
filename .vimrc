@@ -10,7 +10,7 @@ set showmatch
 set sw=2
 set relativenumber
 set laststatus=2
-
+set autoindent
 
 
 call plug#begin('~/.vim/plugged')
@@ -22,7 +22,13 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
-
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
+Plug 'tpope/vim-projectionist'  
+Plug 'stanangeloff/php.vim'
+Plug 'phpactor/phpactor'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'stephpy/vim-php-cs-fixer'
 
 
 
@@ -30,6 +36,8 @@ call plug#end()
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark= "hard"
+
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
 
 let mapleader=" "
 

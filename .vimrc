@@ -1,5 +1,5 @@
 set number
-set mouse=a
+"set mouse=a
 set numberwidth=1
 set clipboard=unnamed
 syntax enable
@@ -7,7 +7,7 @@ set showcmd
 set ruler
 set encoding=utf-8
 set showmatch
-set sw=4
+set sw=2
 set relativenumber
 set laststatus=2
 set autoindent
@@ -20,7 +20,7 @@ Plug 'morhetz/gruvbox'
 
 " IDE
 Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
@@ -45,13 +45,23 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'posva/vim-vue'
 
+"GIT
+Plug 'APZelos/blamer.nvim'
+
 " VimDebug
 Plug 'vim-vdebug/vdebug'
+
+"File tree and tab bars
+"Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'romgrk/barbar.nvim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
 
 call plug#end()
 
@@ -67,9 +77,9 @@ let g:python3_host_prog="/usr/bin/python3"
 let g:phpactorPhpBin = "/usr/bin/php"
 
 
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1
 nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader>nt :NERDTreeFind<CR>
+"nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
@@ -87,7 +97,12 @@ autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/*     " MacOSX/Linux
+"CTRLP 
+set wildignore+=*/.git/*,/*.idea/*,*/.vscode/*,*/WEB-INF/*,*/libs/*,*/.mvn/*,*/target/*,*/.svn/*,*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/*     " MacOSX/Linux
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_depth = 70
+let g:ctrlp_use_caching=0
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:blamer_enabled = 1
+
 

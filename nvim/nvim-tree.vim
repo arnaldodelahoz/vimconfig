@@ -1,5 +1,5 @@
 let g:nvim_tree_auto_open = 1 
-let g:nvim_tree_width = 30 "30 by default
+let g:nvim_tree_width = 40 "30 by default
 let g:nvim_tree_ignore = [ '.git','vendor', 'node_modules', '.cache' ] "empty by default
 "let g:nvim_tree_auto_ignore_ft = {'startify', 'dashboard'} "empty by default, don't auto open tree on specific filetypes.
 

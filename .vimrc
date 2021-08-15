@@ -1,6 +1,8 @@
-set number
-"set mouse=a
+set guicursor=
 set numberwidth=1
+set nohlsearch
+set hidden
+set incsearch
 set clipboard=unnamed
 syntax enable
 set showcmd
@@ -11,7 +13,11 @@ set sw=2
 set relativenumber
 set laststatus=2
 set autoindent
+set smartindent
 set noshowmode
+set completeopt=noinsert,menuone,noselect
+set colorcolumn=120
+set nu
 
 call plug#begin('~/.vim/plugged')
 
@@ -38,8 +44,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'chiel92/vim-autoformat'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'neoclide/coc.nvim'
+"Plug 'maksimr/vim-jsbeautify'
+Plug 'neoclide/coc.nvim' , {'branch': 'release'}
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -50,6 +56,7 @@ Plug 'APZelos/blamer.nvim'
 
 " VimDebug
 Plug 'vim-vdebug/vdebug'
+
 
 "File tree and tab bars
 "Plug 'ryanoasis/vim-devicons'
@@ -75,7 +82,7 @@ let mapleader=" "
 
 let g:python3_host_prog="/usr/bin/python3"
 let g:phpactorPhpBin = "/usr/bin/php"
-
+let s:fontsize=12
 
 "let NERDTreeQuitOnOpen=1
 nmap <Leader>s <Plug>(easymotion-s2)
@@ -83,11 +90,12 @@ nmap <Leader>s <Plug>(easymotion-s2)
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>` :botright :split<CR>:terminal<CR>
 noremap <F3> :Autoformat<CR>
+:tnoremap <Esc> <C-\><C-n>
 
 " phpactor config
 "autocmd BufEnter * call ncm2#enable_for_buffer()
-"set completeopt=noinsert,menuone,noselect
 
 
 " GoTo code navigation.
